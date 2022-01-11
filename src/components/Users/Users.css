@@ -1,0 +1,7 @@
+.users__wrapp{
+    width: 50%;
+    height: 70vh;
+    overflow: auto;
+    padding: 10px;
+    border: 1px solid #000000;
+}

@@ -1,0 +1,7 @@
+.posts__wrapp{
+    width: 50%;
+    overflow: auto;
+    height: 70vh;
+    padding: 10px;
+    border: 1px solid #000000;
+}
