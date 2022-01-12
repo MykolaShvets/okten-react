@@ -9,16 +9,12 @@ const Launches = () => {
     useEffect(() => {
         fetch('https://api.spacexdata.com/v3/launches/')
             .then(value => value.json())
-            .then(value => setLaunches(value))
+            .then(value => setLaunches(value.filter(launch => launch.launch_year  !== '2020')))
     }, [])
 
     return (
         <div>
-            {launches.map(launch => {
-                if (launch.launch_year  !== '2020' ){
-                   return <Launch key={launch.flight_number} launch={launch}/>
-                }
-            })}
+            {launches.map(launch => <Launch key={launch.flight_number} launch={launch}/>)}
         </div>
     );
 };
