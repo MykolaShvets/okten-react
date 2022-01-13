@@ -1,0 +1,9 @@
+.user_details__wrapp{
+    align-items: center;
+    display: flex;
+    column-gap: 10px;
+}
+
+.address ul{
+    padding-inline-start: 0;
+}
