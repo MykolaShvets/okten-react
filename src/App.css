@@ -1,0 +1,16 @@
+.wrapp{
+    padding: 10px;
+}
+
+.top {
+    display: flex;
+}
+
+.users,
+.details{
+    width: 50%;
+    height: 80vh;
+    border: 1px solid black;
+    overflow: auto;
+    padding: 10px;
+}

@@ -1,7 +1,6 @@
 .user_details__wrapp{
-    align-items: center;
     display: flex;
-    column-gap: 10px;
+    align-items: center;
 }
 
 .address ul{
