@@ -1,14 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const FindForm = ({find, formHandler}) => {
+const FindForm = ({find}) => {
+
+    const [form, setForm] = useState({"name": '', "username": '', "email": ''});
+
+    const formHandler = (e) => {
+        const eventData = {...form, [e.target.name]: e.target.value}
+        setForm({...form, ...eventData})
+    }
 
     return (
         <div>
-            <form onSubmit={find}>
+            <form onSubmit={(e) => e.preventDefault()}>
                 <label> Name: <input type="text" name={'name'} onChange={formHandler}/></label>
                 <label> Username: <input type="text" name={'username'} onChange={formHandler}/></label>
                 <label> Email: <input type="text" name={'email'} onChange={formHandler}/></label>
-                <button>Find</button>
+                <button onClick={() => find(form)}>Find</button>
             </form>
         </div>);
 };

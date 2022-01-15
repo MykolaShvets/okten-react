@@ -7,38 +7,42 @@ import FindForm from "./components/FindForm/FindForm";
 function App() {
 
     const [users, setUsers] = useState([]);
+    const [filteredUsers, setfilteredUsers] = useState([]);
 
-    const [form, setForm] = useState({"name": '', "username": '', "email": ''});
 
     useEffect(() => {
         usersServices.getAll()
-            .then(value => setUsers(value))
+            .then(value => {
+                setUsers([...value])
+                setfilteredUsers([...value])
+            })
 
     }, []);
 
 
-    const find = (e) => {
-        e.preventDefault()
-        console.log(form);
-        if (form.name !== '' || form.username !== '' || form.email !== '') {
-            setUsers(users.filter(user => user.name.includes(form.name) && user.username.includes(form.username) && user.email.includes(form.email)))
-        } else {
-            setUsers(users)
+    const find = (form) => {
+
+        console.log(form)
+        let filterArr = [...users]
+        if (form.name) {
+            filterArr = filterArr.filter(user => user.name.toLowerCase().includes(form.name.toLowerCase()))
+        }
+        if (form.username) {
+            filterArr = filterArr.filter(user => user.username.toLowerCase().includes(form.username.toLowerCase()))
+        }
+        if (form.email) {
+            filterArr = filterArr.filter(user => user.email.toLowerCase().includes(form.email.toLowerCase()))
         }
 
+        setfilteredUsers(filterArr)
     };
-
-
-    const formHandler = (e) => {
-        setForm({...form, [e.target.name]: e.target.value})
-    }
 
 
     return (
         <div>
 
-            <FindForm find={find} formHandler={formHandler}/>
-            <Users users={users}/>
+            <FindForm find={find}/>
+            <Users users={filteredUsers}/>
         </div>
     );
 }
