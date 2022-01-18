@@ -1,0 +1,35 @@
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page__wrapper{
+    display: flex;
+    column-gap: 10px;
+}
+
+.left{
+    width: 20%;
+    border-right: 1px solid #040331;
+}
+
+.right{
+    padding: 10px;
+    width: 80%;
+}
+
+.details{
+    border-bottom: 1px solid #040331;
+    padding: 10px;
+}
+
+.btn{
+    padding: 5px 15px;
+    border: 1px solid #040331;
+    border-radius: 15px;
+}
+
+.address{
+    padding: 10px;
+    border-bottom: 1px solid #040331;
+}
