@@ -10,6 +10,8 @@ import UserDetails from "./components/UserDetails/UserDetails";
 import UserPosts from "./components/UserPosts/UserPosts";
 import PostDetails from "./components/PostDetails/PostDetails";
 import PostComments from "./components/PostComments/PostComments";
+import UserAlbums from "./components/UserAlbums/UserAlbums";
+import Photos from "./components/Photos/Photos";
 
 
 function App() {
@@ -21,6 +23,9 @@ function App() {
                     <Route path={'/users'} element={<UsersPage/>}>
                         <Route path={':id'} element={<UserDetails/>}>
                             <Route path={'posts'} element={<UserPosts/>}/>
+                        </Route>
+                        <Route path={':id/albums'} element={<UserAlbums/>}>
+                            <Route path={':albumId'} element={<Photos/>}/>
                         </Route>
                     </Route>
                     <Route path={'/posts'} element={<PostsPage/>}>

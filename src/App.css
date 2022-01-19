@@ -33,3 +33,12 @@
     padding: 10px;
     border-bottom: 1px solid #040331;
 }
+
+.photo{
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #040331;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
