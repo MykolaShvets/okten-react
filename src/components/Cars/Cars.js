@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {carService} from "../../services/cars.service";
 import Car from "../Car/Car";
 
-const Cars = ({trigger, deleteCar, update}) => {
+const Cars = ({trigger, update, setCarForUpdate}) => {
 
     const [cars, setCars] = useState([]);
 
@@ -13,7 +13,7 @@ const Cars = ({trigger, deleteCar, update}) => {
 
     return (
         <div>
-            {cars.map(car => <Car update={update} key={car.id} car={car} deleteCar={deleteCar}/>)}
+            {cars.map(car => <Car update={update} key={car.id} car={car} setCarForUpdate={setCarForUpdate}/>)}
         </div>
     );
 };

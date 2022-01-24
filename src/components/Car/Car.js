@@ -1,16 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import './Car.css';
-import UpdateForm from "../UpdateForm/UpdateForm";
 import {carService} from "../../services/cars.service";
 
-const Car = ({car: {id, model, price, year}, deleteCar, update}) => {
+const Car = ({car, update, setCarForUpdate}) => {
 
-    const [currentCar, setCurrentCar] = useState(null);
+    const {id, model, price, year} = car;
 
-    const getCurrentCar = (id) =>{
-        carService.getById(id).then(value => setCurrentCar(value))
+    const deleteCar = (id) => {
+        carService.deleteById(id).then(value => update(value));
+
     }
+
 
     return (
         <div className={'car__wrap'}>
@@ -19,11 +20,8 @@ const Car = ({car: {id, model, price, year}, deleteCar, update}) => {
                 <h3> model: {model}</h3>
                 <h3> price: {price}</h3>
                 <h3> year: {year}</h3>
+                <button onClick={() => setCarForUpdate(car)}>Update</button>
                 <button onClick={() => deleteCar(id)}>Delete</button>
-                <button onClick={() => getCurrentCar(id)}>Update</button>
-            </div>
-            <div>
-                {currentCar && <UpdateForm update={update} car={currentCar}/>}
             </div>
 
         </div>

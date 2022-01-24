@@ -1,6 +1,4 @@
 import {useState} from "react";
-
-import {carService} from "./services/cars.service";
 import Form from "./components/Form/Form";
 import Cars from "./components/Cars/Cars";
 
@@ -9,22 +7,15 @@ function App() {
 
     const [trigger, setTrigger] = useState(null);
 
-    const update = (data) => {
-        setTrigger(data)
-    };
-
-    const deleteCar = (id) => {
-        carService.deleteById(id).then(value => update(value))
-    }
+    const [carForUpdate, setCarForUpdate] = useState({});
 
 
-
-  return (
-    <div>
-        <Form update={update}/>
-        <Cars trigger={trigger} deleteCar={deleteCar} update={update}/>
-    </div>
-  );
+    return (
+        <div>
+            <Form update={setTrigger} carForUpdate={carForUpdate}/>
+            <Cars trigger={trigger} update={setTrigger} setCarForUpdate={setCarForUpdate}/>
+        </div>
+    );
 }
 
 export default App;
