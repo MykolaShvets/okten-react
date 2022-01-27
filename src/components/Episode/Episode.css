@@ -1,0 +1,25 @@
+.episode{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    width: 300px;
+    height: 250px;
+}
+
+.episode h2{
+    margin: 5px;
+    font-size: 20px;
+}
+
+.episode h3{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.link a{
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 5px;
+}

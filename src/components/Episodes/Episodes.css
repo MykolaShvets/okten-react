@@ -1,0 +1,12 @@
+.episodes{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons button{
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+}

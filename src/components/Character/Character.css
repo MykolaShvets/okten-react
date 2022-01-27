@@ -1,0 +1,21 @@
+.character {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 301px;
+    height: 550px;
+}
+
+.character img{
+    width: 300px;
+}
+.character ul{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
