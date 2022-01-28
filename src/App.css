@@ -1,0 +1,17 @@
+.wrapp, .cats, .dogs{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.cats, .dogs{
+    align-items: center;
+}
+
+.cats__block, .dogs__block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+

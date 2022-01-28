@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Cat = ({cat}) => {
+const Cat = ({cat, deleteCat}) => {
     return (
-        <div>
-            <h1>{cat}</h1>
+        <div className={'cats'}>
+            <h3>{cat}</h3>
+            <button onClick={() => deleteCat(cat)}>Delete</button>
         </div>
     );
 };

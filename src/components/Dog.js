@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Dog = ({dog}) => {
+const Dog = ({dog,  deleteDog}) => {
     return (
-        <div>
-            <h1>{dog}</h1>
+        <div className={'dogs'}>
+            <h3>{dog}</h3>
+            <button onClick={() =>  deleteDog(dog)} >Delete</button>
         </div>
     );
 };
