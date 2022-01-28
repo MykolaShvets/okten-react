@@ -9,3 +9,4 @@ const Dog = ({dog}) => {
 };
 
 export default Dog;
+
