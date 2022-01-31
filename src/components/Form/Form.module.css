@@ -1,0 +1,14 @@
+.form{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.error{
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}
