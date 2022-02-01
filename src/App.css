@@ -1,0 +1,35 @@
+h2.h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.todos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    margin: 5px;
+    padding: 5px;
+}
+
+.completed {
+    color: rgba(0, 0, 0, 0.49);
+}
+
+.cmpleted h2 {
+    text-decoration: line-through;
+}
+
